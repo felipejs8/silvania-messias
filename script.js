@@ -167,17 +167,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const pixKey = '33999120267';
   const pixPayload = generatePixPayload(pixKey, 'Silvania e Messias', 'Aguas Formosas');
 
-  // Load and generate the QR Code
+  // Load QR Code image
   const qrcodeContainer = document.getElementById('qrcode');
-  if (qrcodeContainer && window.QRCode) {
-    new QRCode(qrcodeContainer, {
-      text: pixPayload,
-      width: 200,
-      height: 200,
-      colorDark: '#3F2C52',
-      colorLight: '#ffffff',
-      correctLevel: QRCode.CorrectLevel.M
-    });
+  if (qrcodeContainer) {
+    const qrImage = document.createElement('img');
+    qrImage.src = 'Image/qrcode.png';
+    qrImage.alt = 'QR Code PIX';
+    qrImage.style.width = '200px';
+    qrImage.style.height = '200px';
+    qrcodeContainer.appendChild(qrImage);
   }
 
   // Toast alert triggering function
