@@ -237,8 +237,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const isAttending = attendance.value === 'yes';
       const attendanceText = isAttending ? 'Sim, com certeza!' : 'Infelizmente não poderei comparecer';
       
-      // WhatsApp contact (bride/groom number) - using the PIX phone number as target
-      const whatsappNumber = '5533999120267'; 
+      // WhatsApp contact (bride/groom number)
+      const whatsappNumber = '5533988981952'; 
       
       // Build WhatsApp message content
       let msg = `Olá Silvânia & Messias!\n\n`;
@@ -259,9 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const waUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMsg}`;
       
       showToast('Redirecionando para o WhatsApp...');
-      setTimeout(() => {
-        window.open(waUrl, '_blank');
-      }, 1000);
+      window.open(waUrl, '_blank');
     });
   }
 
